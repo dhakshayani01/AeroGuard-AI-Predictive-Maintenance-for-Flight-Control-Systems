@@ -1,0 +1,58 @@
+@import "tailwindcss";
+
+@theme {
+  --font-sans: "Inter", ui-sans-serif, system-ui, sans-serif;
+  --font-mono: "JetBrains Mono", ui-monospace, SFMono-Regular, monospace;
+  
+  /* Theme Colors */
+  --color-app-bg: var(--app-bg);
+  --color-card-bg: var(--card-bg);
+  --color-sidebar-bg: var(--sidebar-bg);
+  --color-border-ui: var(--border-ui);
+  --color-text-primary: var(--text-primary);
+  --color-text-secondary: var(--text-secondary);
+  --color-text-muted: var(--text-muted);
+}
+
+:root {
+  /* Default Dark Theme */
+  --app-bg: #0A0B0D;
+  --card-bg: #151619;
+  --sidebar-bg: #0F1012;
+  --border-ui: #2A2B2F;
+  --text-primary: #E1E1E1;
+  --text-secondary: #8E9299;
+  --text-muted: #5C5F66;
+}
+
+:root.light {
+  /* Light Theme */
+  --app-bg: #F5F7FA;
+  --card-bg: #FFFFFF;
+  --sidebar-bg: #EDF2F7;
+  --border-ui: #E2E8F0;
+  --text-primary: #1A202C;
+  --text-secondary: #4A5568;
+  --text-muted: #718096;
+}
+
+@layer base {
+  body {
+    @apply bg-app-bg text-text-primary antialiased;
+  }
+}
+
+/* Custom Scrollbar */
+::-webkit-scrollbar {
+  width: 6px;
+}
+::-webkit-scrollbar-track {
+  background: var(--app-bg);
+}
+::-webkit-scrollbar-thumb {
+  background: var(--border-ui);
+  border-radius: 10px;
+}
+::-webkit-scrollbar-thumb:hover {
+  background: var(--text-muted);
+}
